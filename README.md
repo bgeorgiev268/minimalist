@@ -1,3 +1,6 @@
+[![Apache license](https://img.shields.io/badge/license-Apache%202.0-brightgreen.svg)](http://opensource.org/licenses/Apache2.0)
+[![Build Status](https://travis-ci.org/robstoll/minimal-test-suite.svg?branch=master)](https://travis-ci.org/robstoll/minimal-test-suite)
+
 # Minimal Test Suite
 A large code base results in a large test set if always all tests need to be run when one does a change.
 Yet, not all tests cover test cases which are effectively affected by a change. 
