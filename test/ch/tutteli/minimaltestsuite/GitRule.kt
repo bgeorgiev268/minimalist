@@ -3,11 +3,14 @@ package ch.tutteli.minimaltestsuite
 import org.eclipse.jgit.api.Git
 import org.junit.rules.TemporaryFolder
 
-private const val WORK_DIR = "workDir"
 
 class GitRule : TemporaryFolder() {
     lateinit var git: Git
         private set
+
+    companion object{
+        private const val WORK_DIR = "workDir"
+    }
 
     override fun before() {
         super.before()
@@ -45,5 +48,6 @@ class GitRule : TemporaryFolder() {
             return this
         }
     }
+
 
 }
