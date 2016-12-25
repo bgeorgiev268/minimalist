@@ -22,8 +22,10 @@ dependencies {
         exclude group: 'com.googlecode.javaewah'
         exclude group: 'com.jcraft'
     }
-    testCompile ('junit:junit:4.12')
+    testCompile 'junit:junit:4.12'
     testCompile 'org.assertj:assertj-core:3.6.1'
+    testCompile 'com.nhaarman:mockito-kotlin:1.0.1'
+
 }
 
 
