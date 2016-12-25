@@ -17,7 +17,11 @@ apply plugin: "jacoco"
 
 dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    compile "org.eclipse.jgit:org.eclipse.jgit:4.5.0.201609210915-r"
+    compile ('org.eclipse.jgit:org.eclipse.jgit:4.5.0.201609210915-r') {
+        exclude group: 'org.apache.httpcomponents'
+        exclude group: 'com.googlecode.javaewah'
+        exclude group: 'com.jcraft'
+    }
     testCompile ('junit:junit:4.12')
     testCompile 'org.assertj:assertj-core:3.6.1'
 }
