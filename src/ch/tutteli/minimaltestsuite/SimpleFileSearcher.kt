@@ -5,12 +5,15 @@ import java.util.*
 import java.util.regex.Pattern
 
 class SimpleFileSearcher : FileSearcher {
-
-    override fun searchFilesStartingWith(suffix: String): Builder {
-        return Builder(Pattern.compile("^\\Q$suffix\\E.*"))
+    override fun searchFiles(pattern: Pattern): FileSearcher.InFolderBuilder {
+        return InFolderBuilder(pattern)
     }
 
-    class Builder(private val pattern: Pattern) : FileSearcher.Builder {
+    override fun searchFilesStartingWith(suffix: String): InFolderBuilder {
+        return InFolderBuilder(Pattern.compile("^\\Q$suffix\\E.*"))
+    }
+
+    class InFolderBuilder(private val pattern: Pattern) : FileSearcher.InFolderBuilder {
 
         override fun inFolder(directory: File): Set<File> {
             if (!directory.isDirectory) {
