@@ -1,4 +1,4 @@
-package ch.tutteli.minimaltestsuite
+package ch.tutteli.minimalist
 
 import org.eclipse.jgit.api.Git
 import org.junit.rules.TemporaryFolder

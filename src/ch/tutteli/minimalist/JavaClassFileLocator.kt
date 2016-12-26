@@ -1,4 +1,4 @@
-package ch.tutteli.minimaltestsuite
+package ch.tutteli.minimalist
 
 import java.io.File
 import java.util.regex.Pattern

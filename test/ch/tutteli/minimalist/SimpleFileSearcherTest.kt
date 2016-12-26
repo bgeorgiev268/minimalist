@@ -1,4 +1,4 @@
-package ch.tutteli.minimaltestsuite
+package ch.tutteli.minimalist
 
 import org.assertj.core.api.Assertions.assertThat
 import org.assertj.core.api.Assertions.assertThatExceptionOfType

@@ -1,4 +1,4 @@
-package ch.tutteli.minimaltestsuite
+package ch.tutteli.minimalist
 
 import org.junit.rules.TemporaryFolder
 import java.io.File
