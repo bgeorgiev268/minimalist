@@ -91,6 +91,18 @@ class JavaClassFileLocatorTest {
         verifyZeroInteractions(fileSearcher)
     }
 
+    @Test fun locate_SrcWithSlashInTheEndAndClassWithoutPackage_DelegatesToFileSearcher() {
+        //arrange
+        val build = tempFolder.newFolder("build", "classes")
+        val (fileSearcher, folderBuilder) = mockFileSearcher()
+        val testee = JavaClassFileLocator(fileSearcher, tempFolder.root, "src/", build)
+        //act
+        testee.locate("src/Test.java")
+        //assert
+        verify(fileSearcher).searchFiles(any<Pattern>())
+        verify(folderBuilder).inFolder(build)
+    }
+
     @Test fun locate_SrcInSubFolderClassWithoutPackage_DelegatesToFileSearcher() {
         //arrange
         val build = tempFolder.newFolder("build", "classes")
