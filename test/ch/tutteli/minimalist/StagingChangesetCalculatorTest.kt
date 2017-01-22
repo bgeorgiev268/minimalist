@@ -1,6 +1,6 @@
 package ch.tutteli.minimalist
 
-import org.assertj.core.api.Assertions
+import org.assertj.core.api.Assertions.assertThat
 import org.junit.Rule
 import org.junit.Test
 
@@ -14,7 +14,7 @@ class StagingChangesetCalculatorTest {
         //act
         val changeset = testee.calculate()
         //assert
-        Assertions.assertThat(changeset).isEmpty()
+        assertThat(changeset).isEmpty()
     }
 
     @Test fun calculate_NewFileAddedToStaging_TheFile() {
@@ -27,7 +27,7 @@ class StagingChangesetCalculatorTest {
         //act
         val changeset = testee.calculate()
         //assert
-        Assertions.assertThat(changeset).contains(fileName)
+        assertThat(changeset).containsOnly(fileName)
     }
 
     @Test fun calculate_NewFileInSubfolderAddedToStaging_TheFileInclPath() {
@@ -40,7 +40,7 @@ class StagingChangesetCalculatorTest {
         //act
         val changeset = testee.calculate()
         //assert
-        Assertions.assertThat(changeset).contains(filePath)
+        assertThat(changeset).containsOnly(filePath)
     }
 
 
@@ -57,7 +57,7 @@ class StagingChangesetCalculatorTest {
         //act
         val changeset = testee.calculate()
         //assert
-        Assertions.assertThat(changeset).contains(filePath)
+        assertThat(changeset).containsOnly(filePath)
     }
 
     @Test fun calculate_ChangedFileAndInStaging_TheFile() {
@@ -73,7 +73,7 @@ class StagingChangesetCalculatorTest {
         //act
         val changeset = testee.calculate()
         //assert
-        Assertions.assertThat(changeset).contains(filePath)
+        assertThat(changeset).containsOnly(filePath)
     }
 
     @Test fun calculate_ChangedFileInSubfolderAndInStaging_TheFileInclPath() {
@@ -89,7 +89,7 @@ class StagingChangesetCalculatorTest {
         //act
         val changeset = testee.calculate()
         //assert
-        Assertions.assertThat(changeset).contains(filePath)
+        assertThat(changeset).containsOnly(filePath)
     }
 
 }
